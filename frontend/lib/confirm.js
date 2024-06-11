@@ -7,11 +7,9 @@ export const confirmTransaction = async (idTransaction) => {
         },
         body: JSON.stringify({ status: 'APPROVED' }),
       });
-  
       if (!response.ok) {
         throw new Error('Failed to confirm transaction');
       }
-  
       return await response.json();
     } catch (error) {
       console.error('Error confirming transaction:', error);
